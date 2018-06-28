@@ -12,13 +12,17 @@ License URI: http://www.themevault.net/license/-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="images/favicon.png"/>
         <title>King Entretenciones</title>
+
+        <link href="css/scrolling-nav.css" rel="stylesheet" media="all">
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/magnific-popup.css" rel="stylesheet">
         <!-- Custom styles for this template -->
         <link href="css/style.css" rel="stylesheet">
         <link href="css/responsive.css" rel="stylesheet">
         <script src="js/jquery.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/instafeed.min.js" type="text/javascript"></script>
         <script src="js/custom.js" type="text/javascript"></script>
     </head>
     <body id="myPage">
@@ -51,16 +55,54 @@ License URI: http://www.themevault.net/license/-->
                         <li class="active"><a href="index.html"><img src='images/icons/home-hover.png'></a></li>
                         <li><a href="about.html"><img src="images/icons/about.png" onmouseover="this.src = 'images/icons/about-hover.png'" onmouseout="this.src = 'images/icons/about.png'"></a></li>
                         <li><a href="portfolio.html"><img src="images/icons/portfolio.png" onmouseover="this.src = 'images/icons/portfolio-hover.png'" onmouseout="this.src = 'images/icons/portfolio.png'"></a></li>
-                        <li><a href="contact.html"><img src="images/icons/contact.png" onmouseover="this.src = 'images/icons/contact-hover.png'" onmouseout="this.src = 'images/icons/contact.png'"></a></li>
+                        <li><a href="contacto.html"><img src="images/icons/contact.png" onmouseover="this.src = 'images/icons/contact-hover.png'" onmouseout="this.src = 'images/icons/contact.png'"></a></li>
                     </ul>
                 </div>
             </header>
             <div class="banner-full-image">
                 <div class="banner-title">
-                    <h1>KING Entrentenciones</h1>
+                    <img src="images/logo.png" width="100px"><h1>KING Entrentenciones</h1>
                     <a class="btn btn-primary" href="about.html">Leer más</a>
                 </div>
             </div>
+
+            <section id="gallery-block" class="section-padding">
+                <div class="container">
+                    <div class="text-head">
+                        <h2>Promociones</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12 gallery-list">
+                            <div class="port-image">
+                                <img src="images/gallery-image1.png" alt="Gallery-Image" class="img-responsive">
+                                <div class="overlay">
+                                    <div class="text"><a href="images/gallery-image1.png" class="image-popup"><img src="images/pin.png"></a></div>
+                                </div>
+                            </div>
+                            <h1 class="port-title">Castillo Inflable + Cama elástica $70000</h1>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 gallery-list">
+                            <div class="port-image">
+                                <img src="images/gallery-image2.png" alt="Gallery-Image" class="img-responsive">
+                                <div class="overlay">
+                                    <div class="text"><a href="images/gallery-image2.png" class="image-popup"><img src="images/pin.png"></a></div>
+                                </div>
+                            </div>
+                            <h1 class="port-title">2 Pistas de Obstáculos</h1>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 gallery-list">
+                            <div class="port-image">
+                                <img src="images/gallery-image3.png" alt="Gallery-Image" class="img-responsive">
+                                <div class="overlay">
+                                    <div class="text"><a href="images/gallery-image3.png" class="image-popup"><img src="images/pin.png"></a></div>
+                                </div>
+                            </div>
+                            <h1 class="port-title">Mini Tobogán</h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
             <!---footer--->
             <footer>
@@ -79,6 +121,63 @@ License URI: http://www.themevault.net/license/-->
             jQuery(window).load(function () {
                 $('#preloader-container').delay(650).fadeOut('slow')
                         ;
+            });
+        </script>
+
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script>
+            jQuery(document).ready(function ($) {
+                $('.image-popup').magnificPopup({
+                    type: 'image',
+                    removalDelay: 300,
+                    mainClass: 'mfp-with-zoom',
+                    titleSrc: 'title',
+                    gallery: {
+                        enabled: true
+                    },
+                    zoom: {
+                        enabled: true, // By default it's false, so don't forget to enable it
+
+                        duration: 300, // duration of the effect, in milliseconds
+                        easing: 'ease-in-out', // CSS transition easing function
+
+                        // The "opener" function should return the element from which popup will be zoomed in
+                        // and to which popup will be scaled down
+                        // By defailt it looks for an image tag:
+                        opener: function (openerElement) {
+                            // openerElement is the element on which popup was initialized, in this case its <a> tag
+                            // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+                            return openerElement.is('img') ? openerElement : openerElement.find('img');
+                        }
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                var myButton = $('#mybutton');
+                var userFeed = new Instafeed({
+                    get: 'user',
+                    userId: '4828631159',
+                    accessToken: '4828631159.1677ed0.79cec29b3ab94404ad45f640b87dc4ef',
+                    limit: '12',
+                    sortBy: 'most-recent',
+                    after: function () {
+                        var images = $("#instafeed").find('a');
+                        $.each(images, function (index, image) {
+                            var delay = (index * 75) + 'ms';
+                            $(image).css('-webkit-animation-delay', delay);
+                            $(image).css('-moz-animation-delay', delay);
+                            $(image).css('-ms-animation-delay', delay);
+                            $(image).css('-o-animation-delay', delay);
+                            $(image).css('animation-delay', delay);
+                            $(image).addClass('animated flipInX');
+                        });
+
+                    },
+                    template: ' <div class="col-md-2 col-sm-3 col-xs-6"><div class="insta-image"><a href="{{link}}" target="_blank"><img src="{{image}}" /><div class="likes">&hearts; {{likes}}</div></a></div></div>'
+                });
+                userFeed.run();
             });
         </script>
     </body>
