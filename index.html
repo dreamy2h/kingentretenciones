@@ -83,36 +83,110 @@ License URI: http://www.themevault.net/license/-->
             <section id="gallery-block" class="section-padding">
                 <div class="container">
                     <div class="text-head">
-                        <h2>Promociones</h2>
+                        <h1>Promociones</h1>
                     </div>
                     <div class="row">
-                        <div class="col-md-4 col-sm-4 col-xs-12 gallery-list">
+                        <div class="col-md-6 col-sm-6 col-xs-12 gallery-list">
                             <div class="port-image">
                                 <img src="images/gallery-image1.png" alt="Gallery-Image" class="img-responsive">
-                                <div class="overlay">
-                                    <div class="text"><a href="images/gallery-image1.png" class="image-popup"><img src="images/pin.png"></a></div>
-                                </div>
                             </div>
-                            <h1 class="port-title">Castillo Inflable + Cama elástica $70000</h1>
                         </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12 gallery-list">
+                        <div class="col-md-6 col-sm-6 col-xs-12 gallery-list">
+                            <h2>Castillo Inflable + Cama Elástica</h2>
+                            <br>
+                            <h3>Cama elástica</h3>
+                            <h4>
+                                <ul>
+                                    <li>
+                                        Medidas: 3.06 mts. de Ancho - 3 mts., de altura aproximada.
+                                    </li>
+                                    <li>
+                                        Capacidad:Hasta 2kg. máximo a la vez distribuido en niños.
+                                    </li>
+                                </ul>
+                            </h4>
+                            <br><br>
+                            <h3>Castillo Inflable</h3>
+                            <h4>
+                                <ul>
+                                    <li>
+                                        Para niños de 1 a 5 años.
+                                    </li>
+                                    <li>
+                                        Medidas: 2,55 mts. de alto - 2.75 mts. de ancho - 3.8 de largo.
+                                    </li>
+                                    <li>
+                                        Capacidad: Hasta 5 niño,
+                                    </li>
+                                </ul>
+                            </h4>
+                            <br><br>
+                            <h2>Valor Arriendo: $60.000</h2>
+                            <h3>Tiempo de Arriendo: 4 Horas</h3>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12 gallery-list">
                             <div class="port-image">
                                 <img src="images/gallery-image2.png" alt="Gallery-Image" class="img-responsive">
-                                <div class="overlay">
-                                    <div class="text"><a href="images/gallery-image2.png" class="image-popup"><img src="images/pin.png"></a></div>
-                                </div>
                             </div>
-                            <h1 class="port-title">2 Pistas de Obstáculos</h1>
                         </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12 gallery-list">
+                        <div class="col-md-6 col-sm-6 col-xs-12 gallery-list">
+                            <h2>2x1 Dos Toboganes por el Precio de Uno</h2>
+                            <br>
+                            <h3>Tobogán Doble</h3>
+                            <h4>
+                                <ul>
+                                    <li>
+                                        Para niños de 1 a 6 años.
+                                    </li>
+                                    <li>
+                                        Peso máximo total 100 kg., distribuido en 5 niños.
+                                    </li>
+                                    <li>
+                                        Medidas:2,30 mts. de alto - 3,00 mts. de ancho - 3.6 mts de largo.
+                                    </li>
+                                </ul>
+                            </h4>
+                            <br><br>
+                            <h2>Valor Arriendo: $70.000</h2>
+                            <h3>Tiempo de Arriendo: 4 Horas</h3>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12 gallery-list">
                             <div class="port-image">
                                 <img src="images/gallery-image3.png" alt="Gallery-Image" class="img-responsive">
-                                <div class="overlay">
-                                    <div class="text"><a href="images/gallery-image3.png" class="image-popup"><img src="images/pin.png"></a></div>
-                                </div>
                             </div>
-                            <h1 class="port-title">Mini Tobogán</h1>
                         </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 gallery-list">
+                            <h2>Pista de Obstáculos + Pelotero</h2>
+                            <br>
+                            <h3>Pista de Obstáculos</h3>
+                            <h4>
+                                <ul>
+                                    <li>
+                                        Para niños de 2 a 5 años.
+                                    </li>
+                                    <li>
+                                        Peso máximo 90 kg. distribuido en niños.
+                                    </li>
+                                    <li>
+                                        Medidas:2,75 mts. de alto - 3,85 mts. de Largo - 3,80 de Ancho.
+                                    </li>
+                                    <li>
+                                        Capacidad: Hasta 5 niños a la vez.
+                                    </li>
+                                </ul>
+                            </h4>
+                            <br><br>
+                            <h2>Valor Arriendo: $80.000</h2>
+                            <h3>Tiempo de Arriendo: 4 Horas</h3>
+                        </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </section>
@@ -162,41 +236,12 @@ License URI: http://www.themevault.net/license/-->
                             // openerElement is the element on which popup was initialized, in this case its <a> tag
                             // you don't need to add "opener" option if this code matches your needs, it's defailt one.
                             // return openerElement.is('img') ? openerElement : openerElement.find('img');
-                            return "<div>asdasdasdsad</div>";
+                            return openerElement.is('img') ? openerElement : openerElement.find('img');
                         }
-                    },
-                    image: {
-                        markup: '<div>Precios</div>'
                     }
                 });
             });
         </script>
-        <script>
-            $(document).ready(function () {
-                var myButton = $('#mybutton');
-                var userFeed = new Instafeed({
-                    get: 'user',
-                    userId: '4828631159',
-                    accessToken: '4828631159.1677ed0.79cec29b3ab94404ad45f640b87dc4ef',
-                    limit: '12',
-                    sortBy: 'most-recent',
-                    after: function () {
-                        var images = $("#instafeed").find('a');
-                        $.each(images, function (index, image) {
-                            var delay = (index * 75) + 'ms';
-                            $(image).css('-webkit-animation-delay', delay);
-                            $(image).css('-moz-animation-delay', delay);
-                            $(image).css('-ms-animation-delay', delay);
-                            $(image).css('-o-animation-delay', delay);
-                            $(image).css('animation-delay', delay);
-                            $(image).addClass('animated flipInX');
-                        });
-
-                    },
-                    template: ' <div class="col-md-2 col-sm-3 col-xs-6"><div class="insta-image"><a href="{{link}}" target="_blank"><img src="{{image}}" /><div class="likes">&hearts; {{likes}}</div></a></div></div>'
-                });
-                userFeed.run();
-            });
-        </script>
+        
     </body>
 </html>
