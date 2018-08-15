@@ -1,9 +1,3 @@
-<!--Template Name: Snappy
-File Name: contact.html
-Author Name: ThemeVault
-Author URI: http://www.themevault.net/
-License URI: http://www.themevault.net/license/-->
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -28,17 +22,17 @@ License URI: http://www.themevault.net/license/-->
         <div class="section-page-wrap">
             <div class="share">
                 <div class="icon first facebook">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsoundcloud.com%2Fdreamy-rap&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"onclick="javascript:window.open(this.href,  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.kingentretenciones.cl&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"onclick="javascript:window.open(this.href,  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                         <i class="fa fa-facebook fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small" data-mobile-iframe="true" title="Comparte KingEntretenciones en Facebook"></i>
                     </a>
                 </div>
                 <div class="icon twitter">
-                    <a href="http://twitter.com/home?status=%20https://soundcloud.com/dreamy-rap" onclick="javascript:window.open(this.href,  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                    <a href="http://twitter.com/home?status=%20http://www.kingentretenciones.cl" onclick="javascript:window.open(this.href,  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                         <i class="fa fa-twitter"></i>    
                     </a>
                 </div>
                 <div class="icon google-plus">
-                    <a href="https://plus.google.com/share?url=https://soundcloud.com/dreamy-rap" onclick="javascript:window.open(this.href,  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                    <a href="https://plus.google.com/share?url=http://www.kingentretenciones.cl" onclick="javascript:window.open(this.href,  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                         <i class="fa fa-google-plus"></i>
                     </a>
                 </div>
@@ -79,31 +73,29 @@ License URI: http://www.themevault.net/license/-->
                         <div class="col-md-7 col-sm-7 col-xs-12 width-set-60">
                             <h1 class="maintitle"><span><i class="fa fa-envelope"></i> Envíanos un mensaje</span></h1>
                             <div class="wrapcontact">
-                                <div class="done" style="display: none">
-                                    <div class="alert-box success ">Your message has been sent. Thank you! <a class="close" href="javascript:void(0)">x</a></div>
-                                </div>
                                 <form id="contactform">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Primer Nombre">	
+                                                <input type="text" class="form-control" placeholder="Primer Nombre" id="txt_primer_nombre">	
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Primer Apellido">
+                                                <input type="text" class="form-control" placeholder="Primer Apellido" id="txt_primer_apellido">
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <input type="email" class="form-control" placeholder="Correo electrónico">
+                                                <input type="email" class="form-control" placeholder="Correo electrónico" id="txt_email">
                                             </div>
                                             <div class="form-group">
-                                                <textarea name="message" id="message" placeholder="mensaje" cols="30" class="form-control" rows="10"></textarea>
+                                                <textarea name="message" id="txt_mensaje" placeholder="mensaje" cols="30" class="form-control" rows="10"></textarea>
                                             </div>
 
-                                            <input type="submit" class="btn btn-primary" value="Enviar">
-
+                                            <button type="button" class="btn btn-primary" id="btn_enviar">
+                                                Enviar
+                                            </button>
                                         </div>
                                     </div>
                                 </form>
