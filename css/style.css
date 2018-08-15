@@ -394,6 +394,16 @@ h1,h2,h3,h4,h5,h6,p{
     text-align: center;
     text-transform: uppercase;
 }
+
+.text-head h1 {
+    color: #000;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+    text-align: center;
+    text-transform: uppercase;
+}
 .user-title {
     color: #ff5200;
     font-weight: 600;
@@ -841,3 +851,7 @@ footer{
 }
 }
 
+.adaptar
+{
+    width: 100%;
+}
