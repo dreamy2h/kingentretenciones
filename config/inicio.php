@@ -10,8 +10,6 @@
 	<link rel="icon" href="images/favicon.png"/>
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/estilo.css" rel="stylesheet">
-	<script src="../js/jquery.min.js" type="text/javascript"></script>
-	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -49,8 +47,11 @@
 	</nav>
 
 	<div class="container">
-		<div id="contenido"></div>
+		<div id="contenido" style="background-color: #fff"></div>
 	</div>
+	<script src="../js/jquery.min.js" type="text/javascript"></script>
+	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="static/js/jquery-validation/dist/jquery.validate.js"></script>
 	<script type="text/javascript" src="js/inicio.js"></script>
 </body>
 </html>
