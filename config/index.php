@@ -7,18 +7,23 @@
 	<link rel="icon" href="images/favicon.png"/>
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/estilo.css" rel="stylesheet">
-	<script src="../js/jquery.min.js" type="text/javascript"></script>
-	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
 </head>
 <body>
 	<br>
 	<div class="loginmodal-container">
 		<h1>Iniciar Sesión</h1><br>
-		<form>
+		<form id="frm_login" class="form-group">
 			<input type="text" name="user" id="txt_usuario" placeholder="Usuario">
 			<input type="password" name="pass" id="txt_clave" placeholder="Clave">
-			<input type="submit" name="login" class="login loginmodal-submit" value="Iniciar Sesión">
+			<div class="alert hidden">
+                <strong id="alerta"></strong>
+            </div>
+			<input type="submit" name="login" class="login loginmodal-submit" value="Iniciar Sesión" id="btn_login">
 		</form>
 	</div>
+	<script src="../js/jquery.min.js" type="text/javascript"></script>
+	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="js/jquery-validation/dist/jquery.validate.js" type="text/javascript"></script>
+	<script src="js/index.js" type="text/javascript"></script>
 </body>
 </html>

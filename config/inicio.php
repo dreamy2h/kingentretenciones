@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+    $usuario = $_SESSION['usuario'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,6 +11,11 @@
 	<link rel="icon" href="images/favicon.png"/>
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/estilo.css" rel="stylesheet">
+  <link href="librerias/css/fileinput.css" rel="stylesheet">
+  <link href="librerias/css/dataTables.bootstrap.min.css" rel="stylesheet">
+  <link href="librerias/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+  <link href="librerias/css/responsive.bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -33,7 +39,7 @@
       		
       			<ul class="nav navbar-nav navbar-right">
         			<li class="dropdown">
-          				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario<span class="caret"></span></a>
+          				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $usuario; ?><span class="caret"></span></a>
           				<ul class="dropdown-menu">
             				<li><a href="#">Clave</a></li>
             				<li><a href="#">Nombre de usuario</a></li>
@@ -46,12 +52,29 @@
   		</div><!-- /.container-fluid -->
 	</nav>
 
-	<div class="container">
+	<div class="alert alert-success hidden">
+        <strong id="alerta_mensaje"></strong>
+    </div>
+    
+    <div class="alert alert-danger hidden">
+        <strong id="alerta_error"></strong>
+    </div>
+
+    <div class="container-fluid">
 		<div id="contenido" style="background-color: #fff"></div>
 	</div>
-	<script src="../js/jquery.min.js" type="text/javascript"></script>
+	
+
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="librerias/js/fileinput.js" type="text/javascript"></script>
 	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
-	<script type="text/javascript" src="static/js/jquery-validation/dist/jquery.validate.js"></script>
-	<script type="text/javascript" src="js/inicio.js"></script>
+	<script src="librerias/js/jquery-validation/dist/jquery.validate.js" type="text/javascript"></script>
+    <script src="librerias/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="librerias/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+    <script src="librerias/js/dataTables.fixedHeader.min.js" type="text/javascript"></script>
+    <script src="librerias/js/dataTables.responsive.min.js" type="text/javascript"></script>
+    <script src="librerias/js/responsive.bootstrap.min.js" type="text/javascript"></script>
+    <script src="librerias/js/fnReloadAjax.js" type="text/javascript"></script>
+	<script src="js/inicio.js" type="text/javascript"></script>
 </body>
 </html>
