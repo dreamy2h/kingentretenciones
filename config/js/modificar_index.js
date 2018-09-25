@@ -56,21 +56,6 @@ function actualizar_grid_carpetas() {
 }
 
 $(document).ready(function() {
-	$("#imagen_1").fileinput({
-		uploadUrl: "subir_imagenes.php",
-		uploadAsync: false,
-		minFileCount: 1,
-		maxFileCount: 20,
-		showUpload: true,
-		showRemove: false,
-		initialPreview: [
-			<?php foreach($images as $image) { ?>
-				"<img src='<?php echo $image ?>"
-			}
-			
-		]
-	});
-
 	$("#btn_crear_carpeta").click(validar_form);
 	
 	var grid_carpeta = $('#grid_carpeta').DataTable({

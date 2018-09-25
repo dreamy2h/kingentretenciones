@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	$directory = "imagenes/";      
+	$images = glob($directory . "*.*");
 ?>
 <!DOCTYPE html>
 <html>
@@ -75,7 +77,7 @@
 		      	</div>
 		      	<div class="modal-body">
 		        	<p id="prf_subttl_carpeta"></p>
-		        	<input id="imagen_1" type="file" multiple="true" name="imagenes[]" class="file-loading">
+		        	<input id="fi_imagenes" type="file" multiple="true" name="imagenes[]" class="file-loading">
 		      	</div>
 		      	<div class="modal-footer">
 		        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -85,4 +87,31 @@
 	</div>
 	<script type="text/javascript" src="js/modificar_index.js"></script>
 </body>
+<?php 	
+	$directory = "imagenes/";      
+	$images = glob($directory . "*.*");
+?>
+	
+<script>
+	$("#fi_imagenes").fileinput({
+		uploadUrl: "upload.php", 
+    	uploadAsync: false,
+    	minFileCount: 1,
+    	maxFileCount: 20,
+		showUpload: true, 
+		showRemove: false,
+		initialPreview: [
+			<?php foreach($images as $image){?>
+				"<img src='<?php echo $image; ?>' height='120px' class='file-preview-image'>",
+			<?php } ?>],
+    	initialPreviewConfig: [<?php foreach($images as $image){ $infoImagenes=explode("/",$image);?>
+			{caption: "<?php echo $infoImagenes[1];?>",  height: "120px", url: "borrar.php", key:"<?php echo $infoImagenes[1];?>"},
+		<?php } ?>]
+	}).on("filebatchselected", function(event, files) {
+	
+	$("#fi_imagenes").fileinput("upload");
+	
+	});
+	
+	</script>
 </html>

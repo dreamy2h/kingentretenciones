@@ -23,7 +23,7 @@
 	</div>
 	<script src="../js/jquery.min.js" type="text/javascript"></script>
 	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="js/jquery-validation/dist/jquery.validate.js" type="text/javascript"></script>
+	<script src="librerias/js/jquery-validation/dist/jquery.validate.js" type="text/javascript"></script>
 	<script src="js/index.js" type="text/javascript"></script>
 </body>
 </html>
