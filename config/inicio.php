@@ -11,7 +11,7 @@
 	<link rel="icon" href="images/favicon.png"/>
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/estilo.css" rel="stylesheet">
-  <link href="librerias/css/fileinput.css" rel="stylesheet">
+  <link href="librerias/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
   <link href="librerias/css/dataTables.bootstrap.min.css" rel="stylesheet">
   <link href="librerias/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
   <link href="librerias/css/responsive.bootstrap.min.css" rel="stylesheet">
@@ -66,7 +66,7 @@
 	
 
     <script src="../js/jquery.min.js" type="text/javascript"></script>
-    <script src="librerias/js/fileinput.js" type="text/javascript"></script>
+    <script src="librerias/js/fileinput.min.js" type="text/javascript"></script>
 	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="librerias/js/jquery-validation/dist/jquery.validate.js" type="text/javascript"></script>
     <script src="librerias/js/jquery.dataTables.min.js" type="text/javascript"></script>

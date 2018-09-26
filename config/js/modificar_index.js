@@ -99,6 +99,14 @@ $(document).ready(function() {
         var tipo=data['tipo'];
 
         $("#prf_subttl_carpeta").text(carpeta + ", " + tipo + ". Máximo 20 imágenes.");
+        $("#divContentSubirImg").load(
+            "subir_imagenes.php",
+            {
+                "id_carpeta": id,
+                "nombre_carpeta": carpeta,
+                "tipo_carpeta": tipo
+            }
+        );
         $('#dlg_adjuntar_img').modal('show');
     });
 });

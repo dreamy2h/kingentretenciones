@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="col-sm-12">
-		<h2>Administrar carpetas de imágenes</h2>
+		<center><h2>Administrar carpetas de imágenes</h2></center>
 	</div>
 	<div class="container">
 		<div class="row">
@@ -77,7 +77,7 @@
 		      	</div>
 		      	<div class="modal-body">
 		        	<p id="prf_subttl_carpeta"></p>
-		        	<iframe src="index2.php" width="100%;" height="350px"></iframe>
+		        	<div id="divContentSubirImg"></div>
 		      	</div>
 		      	<div class="modal-footer">
 		        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
