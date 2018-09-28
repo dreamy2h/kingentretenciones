@@ -47,8 +47,9 @@
                 <thead>
                     <tr>
                         <th width="10%">Identificador</th>
-                        <th width="50%">Nombre de la Carpeta</th>
+                        <th width="45%">Nombre de la Carpeta</th>
                         <th width="25%">Tipo de Carpeta</th>
+                        <th width="5%"></th>
                         <th width="5%"></th>
                         <th width="5%"></th>
                         <th width="5%"></th>
@@ -56,12 +57,13 @@
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>Identificador</th>
-                        <th>Nombre de la Carpeta</th>
-                        <th>Tipo de Carpeta</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th width="10%">Identificador</th>
+                        <th width="45%">Nombre de la Carpeta</th>
+                        <th width="25%">Tipo de Carpeta</th>
+                        <th width="5%"></th>
+                        <th width="5%"></th>
+                        <th width="5%"></th>
+                        <th width="5%"></th>
                     </tr>
                 </tfoot>
             </table> 
@@ -85,6 +87,24 @@
 		    </div>
 		</div>
 	</div>
+
+	<div id="dlg_descripcion_productos" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+		    <div class="modal-content">
+		      	<div class="modal-header">
+		        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+		        	<h4 class="modal-title">Agregar Descripción a los Productos</h4>
+		      	</div>
+		      	<div class="modal-body">
+		        	
+		      	</div>
+		      	<div class="modal-footer">
+		        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      	</div>
+		    </div>
+		</div>
+	</div>
+
 	<script type="text/javascript" src="js/modificar_index.js"></script>
 </body>
 </html>

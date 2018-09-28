@@ -30,7 +30,7 @@ $tipo_carpeta = $_POST['tipo_carpeta'];
 		<?php foreach($images as $image){?>
 			"<img src='<?php echo $image; ?>' height='120px' class='file-preview-image'>",
 		<?php } ?>],
-	    initialPreviewConfig: [<?php foreach($images as $image){ $infoImagenes=explode("/",$image);?>
+	    initialPreviewConfig: [<?php foreach($images as $image){ $infoImagenes=explode("/" . $ruta . "/",$image);?>
 		{caption: "<?php echo $infoImagenes[1];?>",  height: "120px", url: "borrar.php?ruta=<?php echo $ruta; ?>", key:"<?php echo $infoImagenes[1];?>"},
 		<?php } ?>]
 	}).on("filebatchselected", function(event, files) {

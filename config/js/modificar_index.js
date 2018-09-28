@@ -57,7 +57,7 @@ function actualizar_grid_carpetas() {
 
 $(document).ready(function() {
 	$("#btn_crear_carpeta").click(validar_form);
-	
+	var i = 0;
 	var grid_carpeta = $('#grid_carpeta').DataTable({
         "responsive": true,
         "ajax": "sql/consultas/datagrid_carpetas.php",
@@ -66,8 +66,23 @@ $(document).ready(function() {
             { "data": "carpeta" },
             { "data": "tipo" },
             { "defaultContent": "<button type='button' class='adjuntar btn btn-default' title='Adjuntar Imágenes'><i class='material-icons' style='font-size:25px;color:green'>attach_file</i></button>" },
-            { "defaultContent": "<button type='button' class='editar btn btn-default' title='Editar Datos Carpeta'><i class='material-icons' style='font-size:25px;color:blue'>cached</i></button>" },
-            { "defaultContent": "<button type='button' class='eliminar btn btn-default' title='Eliminar Carpeta'><i class='material-icons' style='font-size:25px;color:red'>highlight_off</i></button>" }
+            { "defaultContent": "<button type='button' class='editar btn btn-default' title='Editar Datos Carpeta'><i class='material-icons' style='font-size:25px;color:blue'>update</i></button>" },
+            { "defaultContent": "<button type='button' class='eliminar btn btn-default' title='Eliminar Carpeta'><i class='material-icons' style='font-size:25px;color:red'>delete</i></button>"},
+            { 
+                "data": "id_tipo",
+                "render": function(data, type, row)
+                {
+                    const PRODUCTOS = 3;
+                    var boton_disabled;
+                    if (data == PRODUCTOS) {
+                        boton_disabled = "<button type='button' class='descripcion btn btn-default' title='Agregar Descripción a los Productos'><i class='material-icons' style='font-size:25px;'>settings</i></button>";
+                    } else {
+                        boton_disabled = "...";
+                    }
+
+                    return boton_disabled;
+                }
+            }
         ],
         "language": {
         	"decimal": "",
@@ -108,5 +123,25 @@ $(document).ready(function() {
             }
         );
         $('#dlg_adjuntar_img').modal('show');
+    });
+
+    $("#grid_carpeta tbody").on("click", "button.descripcion", function () {
+        var data = grid_carpeta.row( $(this).parents("tr") ).data();
+
+        // var id=data['id'];
+        // var carpeta=data['carpeta'];
+        // var tipo=data['tipo'];
+
+        // $("#prf_subttl_carpeta").text(carpeta + ", " + tipo + ". Máximo 20 imágenes.");
+        // $("#divContentSubirImg").load(
+        //     "subir_imagenes.php",
+        //     {
+        //         "id_carpeta": id,
+        //         "nombre_carpeta": carpeta,
+        //         "tipo_carpeta": tipo
+        //     }
+        // );
+        
+        $('#dlg_descripcion_productos').modal('show');
     });
 });
