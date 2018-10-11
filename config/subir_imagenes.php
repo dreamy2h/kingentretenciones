@@ -5,10 +5,9 @@ $nombre_carpeta = $_POST['nombre_carpeta'];
 $tipo_carpeta = $_POST['tipo_carpeta'];
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8"/>
-    <title>Bootstrap File Upload</title>
 </head>
 <body>
 	<input id="archivos" name="imagenes[]" type="file" multiple=true class="file-loading">

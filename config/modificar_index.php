@@ -96,7 +96,7 @@
 		        	<h4 class="modal-title">Agregar Descripción a los Productos</h4>
 		      	</div>
 		      	<div class="modal-body">
-		        	
+		        	<div id="divContenedorProductos"></div>
 		      	</div>
 		      	<div class="modal-footer">
 		        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

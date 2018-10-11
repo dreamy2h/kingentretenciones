@@ -11,6 +11,7 @@
 <body>
 	<br>
 	<div class="loginmodal-container">
+		<img src="../images/user-image.png" class="img-rounded" width="100%">
 		<h1>Iniciar Sesión</h1><br>
 		<form id="frm_login" class="form-group">
 			<input type="text" name="user" id="txt_usuario" placeholder="Usuario">

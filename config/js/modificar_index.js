@@ -127,21 +127,16 @@ $(document).ready(function() {
 
     $("#grid_carpeta tbody").on("click", "button.descripcion", function () {
         var data = grid_carpeta.row( $(this).parents("tr") ).data();
+        var id=data['id'];
+        var carpeta=data['carpeta'];
 
-        // var id=data['id'];
-        // var carpeta=data['carpeta'];
-        // var tipo=data['tipo'];
-
-        // $("#prf_subttl_carpeta").text(carpeta + ", " + tipo + ". Máximo 20 imágenes.");
-        // $("#divContentSubirImg").load(
-        //     "subir_imagenes.php",
-        //     {
-        //         "id_carpeta": id,
-        //         "nombre_carpeta": carpeta,
-        //         "tipo_carpeta": tipo
-        //     }
-        // );
-        
+        $("#divContenedorProductos").load(
+            "productos_detalle.php",
+            {
+                "id_carpeta": id,
+                "nombre_carpeta": carpeta
+            }
+        );
         $('#dlg_descripcion_productos').modal('show');
     });
 });

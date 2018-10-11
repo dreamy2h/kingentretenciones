@@ -3,7 +3,7 @@
 	$carpeta_nueva = $_GET['ruta'];
 	$carpetaAdjunta="imagenes/" . $carpeta_nueva . "/";
 
-	function guardar_imagenes($carpetaAdjunta) {
+	function guardar_imagenes($carpetaAdjunta, $carpeta_nueva) {
 		require("conexion.php");
 		$mysqli->autocommit(false);
 
@@ -19,7 +19,7 @@
 			
 			$consulta = "insert into carpeta_imagenes_det (id_carpeta, nombre_imagen) values (?, ?)";
 			$st = $mysqli->prepare($consulta);
-			$st->bind_param("is", $carpeta_nueva, $$nombreArchivo);
+			$st->bind_param("is", $carpeta_nueva, $nombreArchivo);
 			if ($st->execute()) {
 				move_uploaded_file($nombreTemporal,$rutaArchivo);
 				$infoImagenesSubidas[$i]=array("caption"=>"$nombreArchivo","height"=>"120px","url"=>"borrar.php","key"=>$nombreArchivo);
@@ -43,14 +43,14 @@
 	}
 
 	if (file_exists($carpetaAdjunta)) {
-		guardar_imagenes($carpetaAdjunta);	
+		guardar_imagenes($carpetaAdjunta, $carpeta_nueva);	
 	} else {
 		if (!mkdir($carpetaAdjunta, 0777, true)) {
 			echo "Fallo al crear las carpetas.";
 			exit();
 		}
 
-		guardar_imagenes($carpetaAdjunta);
+		guardar_imagenes($carpetaAdjunta, $carpeta_nueva);
 	}
 	
 	
