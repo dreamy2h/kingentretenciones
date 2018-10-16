@@ -14,6 +14,8 @@ create table carpeta_imagenes (
 create table carpeta_imagenes_det ( 
 	id int (10) NOT NULL AUTO_INCREMENT, 
 	id_carpeta int (10) NOT NULL, 
-	nombre_imagen varchar(100) NOT NULL, 
+	nombre_imagen varchar(100) NOT NULL,
+    nombre_producto varchar(100),
+    descripcion_producto varchar(2000),
 	PRIMARY KEY (id) 
 )

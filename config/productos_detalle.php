@@ -14,18 +14,18 @@
 				<form class="form-group" id="frm_crear_carpeta">
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12">
-							<input type="text" name="txt_nombre_producto" id="txt_nombre_producto" class="form-control disabled" placeholder="Nombre del Producto">
+							<input type="text" name="txt_nombre_producto" id="txt_nombre_producto" class="form-control" placeholder="Nombre del Producto" disabled>
 						</div>
 
 						<div class="col-lg-12 col-md-12 col-sm-12">
-							<textarea class="form-control disabled" placeholder="Descripción del Producto"></textarea>
+							<textarea class="form-control" placeholder="Descripción del Producto" disabled></textarea>
 						</div>
 					</div>
 
 					<br>
 					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-12">
-							<input type="button" class="btn btn-primary form-control disabled" value="Crear Carpeta" id="btn_crear_carpeta" name="btn_crear_carpeta">
+							<input type="button" class="btn btn-primary form-control disabled" value="Guardar" id="btn_crear_carpeta" name="btn_crear_carpeta">
 						</div>
 
 						<div class="col-lg-6 col-md-6 col-sm-12">

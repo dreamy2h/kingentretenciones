@@ -1,7 +1,9 @@
+var id_carpeta = $("#id_carpeta").val();
+
 $(document).ready(function() {
-	var grid_carpeta = $('#grid_productos_det').DataTable({
+	var grid_productos_det = $('#grid_productos_det').DataTable({
 		"responsive": true,
-        "ajax": "sql/consultas/datagrid_productos_det.php",
+        "ajax": "sql/consultas/datagrid_productos_det.php?id_carpeta=" + id_carpeta,
         "columns": [
             { "data": "id" },
             { "data": "nombre_imagen" },
@@ -28,4 +30,22 @@ $(document).ready(function() {
 	        }
         }
 	});
+
+	$("#grid_productos_det tbody").on("click", "button.descripcion", function () {
+        var data = grid_productos_det.row( $(this).parents("tr") ).data();
+
+        var id=data['id'];
+        
+
+        $("#prf_subttl_carpeta").text(carpeta + ", " + tipo + ". Máximo 20 imágenes.");
+        $("#divContentSubirImg").load(
+            "subir_imagenes.php",
+            {
+                "id_carpeta": id,
+                "nombre_carpeta": carpeta,
+                "tipo_carpeta": tipo
+            }
+        );
+        $('#dlg_adjuntar_img').modal('show');
+    });
 });
