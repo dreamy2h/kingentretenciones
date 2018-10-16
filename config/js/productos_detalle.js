@@ -7,6 +7,8 @@ $(document).ready(function() {
         "columns": [
             { "data": "id" },
             { "data": "nombre_imagen" },
+            { "data": "nombre_producto" },
+            { "data": "descripcion_producto" },
             { "defaultContent": "<button type='button' class='descripcion btn btn-default' title='Descripción de productos'><i class='material-icons' style='font-size:25px;'>create</i></button>" }
         ],
         "language": {
@@ -36,16 +38,6 @@ $(document).ready(function() {
 
         var id=data['id'];
         
-
-        $("#prf_subttl_carpeta").text(carpeta + ", " + tipo + ". Máximo 20 imágenes.");
-        $("#divContentSubirImg").load(
-            "subir_imagenes.php",
-            {
-                "id_carpeta": id,
-                "nombre_carpeta": carpeta,
-                "tipo_carpeta": tipo
-            }
-        );
-        $('#dlg_adjuntar_img').modal('show');
+        
     });
 });

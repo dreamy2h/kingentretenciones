@@ -10,7 +10,7 @@
 	<div class="container-fluid">
 		<h3><?php echo $nombre_carpeta ?></h3>
 		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12">
+			<div class="col-lg-6 col-md-6 col-sm-12">
 				<form class="form-group" id="frm_crear_carpeta">
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12">
@@ -39,16 +39,20 @@
         <table id="grid_productos_det" class="table table-striped table-bordered nowrap" width="100%">
             <thead>
                 <tr>
-                    <th width="35%">Identificador</th>
-                    <th width="45%">Nombre de la Imagen</th>
-                    <th width="20%"></th
+                    <th width="10%">Identificador</th>
+                    <th width="20%">Nombre de la Imagen</th>
+                    <th width="15%">Nombre del Producto</th>
+                    <th width="45%">Descripción del Producto</th>
+                    <th width="10%"></th>
                 </tr>
             </thead>
             <tfoot>
                 <tr>
-                    <th width="35%">Identificador</th>
-                    <th width="45%">Nombre de la Imagen</th>
-                    <th width="20%"></th>
+                    <th width="10%">Identificador</th>
+                    <th width="20%">Nombre de la Imagen</th>
+                    <th width="15%">Nombre del Producto</th>
+                    <th width="45%">Descripción del Producto</th>
+                    <th width="10%"></th>
                 </tr>
             </tfoot>
         </table> 

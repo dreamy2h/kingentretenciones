@@ -91,10 +91,14 @@
     transition: opacity ease 0.5s;
 } 
 
-.login-help{
+.login-help {
   font-size: 12px;
 }
 
 body {
     background-color: #A4A4A4;
+}
+
+#modal_tamaño {
+   width: 80% !important;
 }

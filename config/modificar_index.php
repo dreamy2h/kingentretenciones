@@ -89,7 +89,7 @@
 	</div>
 
 	<div id="dlg_descripcion_productos" class="modal fade" role="dialog">
-		<div class="modal-dialog">
+		<div class="modal-dialog" id="modal_tamaño">
 		    <div class="modal-content">
 		      	<div class="modal-header">
 		        	<button type="button" class="close" data-dismiss="modal">&times;</button>
