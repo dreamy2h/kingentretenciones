@@ -25,16 +25,24 @@
 					<br>
 					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-12">
-							<input type="button" class="btn btn-primary form-control disabled" value="Guardar" id="btn_guardar_det" name="btn_crear_carpeta">
+							<input type="button" class="btn btn-primary form-control disabled" value="Guardar" id="btn_guardar_det" name="btn_guardar_det">
 						</div>
 
 						<div class="col-lg-6 col-md-6 col-sm-12">
-							<input type="button" class="btn btn-danger form-control disabled" value="Cancelar" id="btn_cancelar_det" name="btn_crear_carpeta">
+							<input type="button" class="btn btn-danger form-control disabled" value="Cancelar" id="btn_cancelar_det" name="btn_cancelar_det">
 						</div>
 					</div>
 				</form>
 			</div>
 		</div>
+
+		<div class="alert alert-success hidden" id="alert_pdctos_det_success">
+	        <strong id="strong_pdctos_det_success"></strong>
+	    </div>
+	    <div class="alert alert-danger hidden" id="alert_pdctos_det_danger">
+	        <strong id="strong_pdctos_det_danger"></strong>
+	    </div>
+
         <br>
         <table id="grid_productos_det" class="table table-striped table-bordered nowrap" width="100%">
             <thead>

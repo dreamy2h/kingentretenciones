@@ -43,22 +43,37 @@ function guardar_det() {
                 descripcion_producto:descripcion_producto 
             },
             type: "POST",
-            success: function(data) {
-                if (data==1) {
-                    actualizar_grid_productos();
-                    $("#alerta_mensaje").text("Detalle del producto fue ingresado con éxito.");
-                    $(".alert").alert()
+            success: function(respuesta) {
+                const OK = "1";
+                if (respuesta == OK) {
+                    $("#grid_productos_det").dataTable().fnReloadAjax();
+                    $("#strong_pdctos_det_success").text("Detalle del producto fue ingresado con éxito.");
+                    $("#alert_pdctos_det_success").removeClass("hidden");
+                    $('#frm_producto_det')[0].reset();
+                    cancelar_add();
+                    window.setTimeout(ocultar_alert,3000,"alert-success");
                 } else {
-                    $("#alerta_error").text(data);
-                    $(".alert").alert()
+                    $("#strong_pdctos_det_danger").text(data);
+                    $("#alert_pdctos_det_danger").removeClass("hidden");
+                    window.setTimeout(ocultar_alert,3000,".alert-danger");
                 }
             }
         });
     }
 }
 
+function cancelar_add() {
+    $("#txt_nombre_producto").attr("disabled",true);
+    $("#txt_descripcion_producto").attr("disabled",true);
+    $("#txt_descripcion_producto").text("");
+
+    $("#btn_guardar_det").addClass("disabled");
+    $("#btn_cancelar_det").addClass("disabled");
+}
+
 $(document).ready(function() {
     $("#btn_guardar_det").click(guardar_det);
+    $("#btn_guardar_det").click(cancelar_add);
 	var grid_productos_det = $('#grid_productos_det').DataTable({
 		"responsive": true,
         "ajax": "sql/consultas/datagrid_productos_det.php?id_carpeta=" + id_carpeta,
@@ -94,14 +109,14 @@ $(document).ready(function() {
 	$("#grid_productos_det tbody").on("click", "button.descripcion", function () {
         var data = grid_productos_det.row( $(this).parents("tr") ).data();
 
-        var id_producto = data["id"];
+        id_producto = data["id"];
         var nombre_producto = data["nombre_producto"];
         var descripcion_producto = data["descripcion_producto"];
 
         nombre_producto = limpiar_data(nombre_producto);
         descripcion_producto = limpiar_data(descripcion_producto);
 
-        $("#txt_nombre_producto").text(nombre_producto);
+        $("#txt_nombre_producto").val(nombre_producto);
         $("#txt_descripcion_producto").text(descripcion_producto);
         $("#txt_nombre_producto").attr("disabled",false);
         $("#txt_descripcion_producto").attr("disabled",false);

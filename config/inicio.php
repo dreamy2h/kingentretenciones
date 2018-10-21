@@ -52,19 +52,12 @@
   		</div><!-- /.container-fluid -->
 	</nav>
 
-	<!-- <div class="alert alert-success hidden">
-        <strong id="alerta_mensaje"></strong>
-    </div> -->
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+	<div class="alert alert-success hidden">
         <strong id="alerta_mensaje"></strong>
     </div>
-    
-    <!-- <div class="alert alert-danger hidden">
+    <div class="alert alert-danger hidden">
         <strong id="alerta_error"></strong>
-    </div> -->
+    </div>
 
     <div class="container-fluid">
 		<div id="contenido" style="background-color: #fff"></div>

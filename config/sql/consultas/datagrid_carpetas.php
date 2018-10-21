@@ -1,20 +1,32 @@
 <?php
 	session_start();
 	require("../../conexion.php");
+	$tipo_carpeta = $_GET["tipo_carpeta"];
 
-	$consulta="SELECT id, glosa as carpeta, IFNULL(ELT(FIELD(tipo, 1, 2, 3),'Eventos','Promociones','Productos'), 'Sin categoría') as tipo, tipo as id_tipo FROM carpeta_imagenes order by id asc";
-	$execute=$mysqli->query($consulta);
+	$consulta = "SELECT id, glosa as carpeta, IFNULL(ELT(FIELD(tipo, 1, 2, 3),'Eventos','Promociones','Productos'), 'Sin categoría') as tipo, tipo as id_tipo, activa FROM carpeta_imagenes where tipo = ? order by id asc";
+	$st = $mysqli->prepare($consulta);
+	$st->bind_param("i", $tipo_carpeta);
+	$st->execute();
+	$st->store_result();
 
-	while($data=$execute->fetch_assoc()){
-		$filas[]=$data;
+	if ($st->num_rows>0) {
+		$st->bind_result($id, $carpeta, $tipo, $id_tipo, $activa);
+
+		while ($st->fetch()) {
+			$data = array(
+                'id' => $id,
+                'carpeta' => $carpeta,
+                'tipo' => $tipo,
+                'id_tipo' => $id_tipo,
+                'activa' => $activa
+            );
+            $filas[]=$data;
+		}
+        echo '{"data":'.json_encode($filas).'}';
+	} else {
+        echo '{"data":[]}';
 	}
 
-	if(empty($filas)){
-	    echo '{"data":[]}';
-	}else{
-		echo '{"data":'.json_encode($filas).'}';
-	}
-
-	$execute->free();
-	$mysqli->close();
+	$st->close();
+    $mysqli->close();
 ?>

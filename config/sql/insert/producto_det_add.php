@@ -6,9 +6,9 @@
 	$nombre_producto = $_POST["nombre_producto"];
 	$descripcion_producto = $_POST["descripcion_producto"];
 
-	$update = "UPDATE carpeta_imagenes_det set nombre_producto = ?, descripcion_producto ?  where id = ?";
+	$update = "UPDATE carpeta_imagenes_det set nombre_producto = ?, descripcion_producto = ?  where id = ?";
 
-	$st=$mysqli->prepare($update);
+	$st = $mysqli->prepare($update);
 	$st->bind_param("ssi", $nombre_producto, $descripcion_producto, $id_producto);
 
 	if ($st->execute()) {

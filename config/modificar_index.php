@@ -34,7 +34,7 @@
 						</div>
 
 						<div class="col-lg-2 col-md-2 col-sm-12">
-							<input type="button" class="btn btn-primary form-control" value="Cancelar" id="btn_cancelar" name="btn_crear_carpeta">
+							<input type="button" class="btn btn-danger form-control" value="Cancelar" id="btn_cancelar" name="btn_cancelar">
 						</div>
 					</div>
 				</form>
@@ -46,24 +46,26 @@
             <table id="grid_carpeta" class="table table-striped table-bordered nowrap" width="100%">
                 <thead>
                     <tr>
-                        <th width="10%">Identificador</th>
-                        <th width="45%">Nombre de la Carpeta</th>
-                        <th width="25%">Tipo de Carpeta</th>
-                        <th width="5%"></th>
-                        <th width="5%"></th>
-                        <th width="5%"></th>
-                        <th width="5%"></th>
+                        <th width="12%">Identificador</th>
+                        <th width="15%">Nombre de la Carpeta</th>
+                        <th width="13%">Tipo de Carpeta</th>
+                        <th width="12%"></th>
+                        <th width="12%"></th>
+                        <th width="12%"></th>
+                        <th width="12%"></th>
+                        <th width="12%"></th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                        <th width="10%">Identificador</th>
-                        <th width="45%">Nombre de la Carpeta</th>
-                        <th width="25%">Tipo de Carpeta</th>
-                        <th width="5%"></th>
-                        <th width="5%"></th>
-                        <th width="5%"></th>
-                        <th width="5%"></th>
+                        <th width="12%">Identificador</th>
+                        <th width="15%">Nombre de la Carpeta</th>
+                        <th width="13%">Tipo de Carpeta</th>
+                        <th width="12%"></th>
+                        <th width="12%"></th>
+                        <th width="12%"></th>
+                        <th width="12%"></th>
+                        <th width="12%"></th>
                     </tr>
                 </tfoot>
             </table> 

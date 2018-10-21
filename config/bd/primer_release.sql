@@ -8,6 +8,7 @@ create table carpeta_imagenes (
     id int (10)   NOT NULL AUTO_INCREMENT,
     glosa varchar (250)   NOT NULL,
     tipo int (1) NOT NULL,
+    activa int(1) NOT NULL,
     PRIMARY KEY (id)
 )
 
