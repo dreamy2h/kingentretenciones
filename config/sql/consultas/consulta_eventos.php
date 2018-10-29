@@ -1,4 +1,4 @@
- <?php
+<?php
     require("../../conexion.php");
     define("EVENTOS", 1);
     define("ACTIVADA", 1);
