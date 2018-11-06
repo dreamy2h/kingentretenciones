@@ -5,17 +5,17 @@ function cargar_eventos() {
  		url: "config/sql/consultas/consulta_eventos.php",
  		async: false,
  		success: function(data) {
- 			var eventos = "<ol class='carousel-indicators'>";
- 			for (var i = 0; i < data.length; i++) {
- 				if (i === 0) {
- 					eventos += "<li data-target='#miSlide' data-slide-to='" + i + "' class='active'></li>";
- 				} else {
- 					eventos += "<li data-target='#miSlide' data-slide-to='" + i + "'></li>";
- 				}
-			}
+ 		// 	var eventos = "<ol class='carousel-indicators'>";
+ 		// 	for (var i = 0; i < data.length; i++) {
+ 		// 		if (i === 0) {
+ 		// 			eventos += "<li data-target='#miSlide' data-slide-to='" + i + "' ></li>";
+ 		// 		} else {
+ 		// 			eventos += "<li data-target='#miSlide' data-slide-to='" + i + "'></li>";
+ 		// 		}
+			// }
 
-			eventos += "</ol>";
-			eventos += "<div class='carousel-inner'>";
+			// eventos += "</ol>";
+			var eventos = "<div class='carousel-inner'>";
 
 			for (var i = 0; i < data.length; i++) {
 				if (i === 0) {
@@ -44,17 +44,17 @@ function cargar_promociones() {
  		url: "config/sql/consultas/consulta_promociones.php",
  		async: false,
  		success: function(data) {
- 			var promociones = "<ol class='carousel-indicators'>";
- 			for (var i = 0; i < data.length; i++) {
- 				if (i === 0) {
- 					promociones += "<li data-target='#miSlide2' data-slide-to='" + i + "' class='active'></li>";
- 				} else {
- 					promociones += "<li data-target='#miSlide2' data-slide-to='" + i + "'></li>";
- 				}
-			}
+ 		// 	var promociones = "<ol class='carousel-indicators'>";
+ 		// 	for (var i = 0; i < data.length; i++) {
+ 		// 		if (i === 0) {
+ 		// 			promociones += "<li data-target='#miSlide2' data-slide-to='" + i + "' class='active'></li>";
+ 		// 		} else {
+ 		// 			promociones += "<li data-target='#miSlide2' data-slide-to='" + i + "'></li>";
+ 		// 		}
+			// }
 
-			promociones += "</ol>";
-			promociones += "<div class='carousel-inner'>";
+			// promociones += "</ol>";
+			promociones = "<div class='carousel-inner'>";
 
 			for (var i = 0; i < data.length; i++) {
 				if (i === 0) {

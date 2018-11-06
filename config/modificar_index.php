@@ -26,6 +26,7 @@
 							    <option value="1">Eventos</option>
 							    <option value="2">Promociones</option>
 							    <option value="3">Productos</option>
+							    <option value="4">Portada</option>
 							</select>
 						</div>
 

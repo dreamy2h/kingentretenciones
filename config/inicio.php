@@ -32,7 +32,7 @@
 
 	    	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       			<ul class="nav navbar-nav">
-        			<li class="active"><a href="#" id="btn_index" onclick="setLink('modificar_index.php')">Index</a></li>
+        			<li class="active"><a href="#" id="btn_index" onclick="setLink('modificar_index.php')">Adm. Imágenes</a></li>
         			<li><a href="#" id="btn_quienes_somos" onclick="setLink('modificar_quienes_somos.php')">Quienes somos</a></li>
         			<li><a href="#" id="btn_productos" onclick="setLink('modificar_productos.php')">Productos</a></li>
       			</ul>
