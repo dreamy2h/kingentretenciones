@@ -12,11 +12,23 @@
     $st->bind_param("ii", $tipo_carpeta, $estado);
     $st->execute();
     $st->store_result();
-	$st->bind_result($id, $nombre_imagen, $id_carpeta);
-    $st->fetch();
-    
-    echo $id_carpeta . "/" . $nombre_imagen;
+	
+    if ($st->num_rows > 0) {
+        $st->bind_result($id, $nombre_imagen, $id_carpeta);
 
+        while ($st->fetch()) {
+            $data = array(
+                "id" => $id,
+                "nombre_imagen" => $nombre_imagen,
+                "id_carpeta" => $id_carpeta
+            );
+            $filas[]=$data;
+        }
+        echo json_encode($filas);
+    } else {
+        echo '{"data":[]}';
+    }
+   
     $st->close();
     $mysqli->close();
 ?>
