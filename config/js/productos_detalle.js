@@ -1,4 +1,5 @@
 var id_carpeta = $("#id_carpeta").val();
+var tipo_carpeta = $("#tipo_carpeta").val();
 var id_producto = null;
 
 function limpiar_data(valor) {
@@ -72,8 +73,18 @@ function cancelar_add() {
 }
 
 $(document).ready(function() {
+    var QUIENES_SOMOS = 5;
+
     $("#btn_guardar_det").click(guardar_det);
     $("#btn_guardar_det").click(cancelar_add);
+
+    console.log("tipo_carpeta: " + tipo_carpeta);
+    if (tipo_carpeta == QUIENES_SOMOS) {
+
+        $("#txt_nombre_producto").attr("placeholder", "Nombre Encargado");
+        $("#txt_descripcion_producto").attr("placeholder", "Descripción de la empresa");
+    }
+
 	var grid_productos_det = $('#grid_productos_det').DataTable({
 		"responsive": true,
         "ajax": "sql/consultas/datagrid_productos_det.php?id_carpeta=" + id_carpeta,
@@ -108,7 +119,6 @@ $(document).ready(function() {
 
 	$("#grid_productos_det tbody").on("click", "button.descripcion", function () {
         var data = grid_productos_det.row( $(this).parents("tr") ).data();
-
         id_producto = data["id"];
         var nombre_producto = data["nombre_producto"];
         var descripcion_producto = data["descripcion_producto"];

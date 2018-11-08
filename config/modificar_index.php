@@ -27,6 +27,7 @@
 							    <option value="2">Promociones</option>
 							    <option value="3">Productos</option>
 							    <option value="4">Portada</option>
+							    <option value="5">Quienes Somos</option>
 							</select>
 						</div>
 
@@ -96,7 +97,7 @@
 		    <div class="modal-content">
 		      	<div class="modal-header">
 		        	<button type="button" class="close" data-dismiss="modal">&times;</button>
-		        	<h4 class="modal-title">Agregar Descripción a los Productos</h4>
+		        	<h4 id="txt_nombre_dialogo" class="modal-title"></h4>
 		      	</div>
 		      	<div class="modal-body">
 		        	<div id="divContenedorProductos"></div>

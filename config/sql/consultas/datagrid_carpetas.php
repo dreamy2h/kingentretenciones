@@ -3,7 +3,7 @@
 	require("../../conexion.php");
 	$tipo_carpeta = $_GET["tipo_carpeta"];
 
-	$consulta = "SELECT id, glosa as carpeta, IFNULL(ELT(FIELD(tipo, 1, 2, 3, 4),'Eventos','Promociones','Productos', 'Portada'), 'Sin categoría') as tipo, tipo as id_tipo, activa FROM carpeta_imagenes where tipo = ? order by id asc";
+	$consulta = "SELECT id, glosa as carpeta, IFNULL(ELT(FIELD(tipo, 1, 2, 3, 4, 5),'Eventos','Promociones','Productos', 'Portada', 'Quienes Somos'), 'Sin categoría') as tipo, tipo as id_tipo, activa FROM carpeta_imagenes where tipo = ? order by id asc";
 	$st = $mysqli->prepare($consulta);
 	$st->bind_param("i", $tipo_carpeta);
 	$st->execute();
@@ -20,7 +20,7 @@
                 'id_tipo' => $id_tipo,
                 'activa' => $activa
             );
-            $filas[]=$data;
+            $filas[] = $data;
 		}
         echo '{"data":'.json_encode($filas).'}';
 	} else {

@@ -2,11 +2,13 @@
 	session_start();
 	$id_carpeta = $_POST["id_carpeta"];
 	$nombre_carpeta = $_POST["nombre_carpeta"];
+	$tipo_carpeta = $_POST["tipo_carpeta"];
 ?>
 <!DOCTYPE html>
 <html>
 <body>
 	<input type="hidden" name="id_carpeta" id="id_carpeta" value="<?php echo $id_carpeta; ?>">
+	<input type="hidden" name="tipo_carpeta" id="tipo_carpeta" value="<?php echo $tipo_carpeta; ?>">
 	<div class="container-fluid">
 		<h3><?php echo $nombre_carpeta ?></h3>
 		<div class="row">

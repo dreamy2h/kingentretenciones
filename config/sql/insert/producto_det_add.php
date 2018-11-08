@@ -6,6 +6,8 @@
 	$nombre_producto = $_POST["nombre_producto"];
 	$descripcion_producto = $_POST["descripcion_producto"];
 
+	$descripcion_producto = nl2br($descripcion_producto);
+
 	$update = "UPDATE carpeta_imagenes_det set nombre_producto = ?, descripcion_producto = ?  where id = ?";
 
 	$st = $mysqli->prepare($update);
