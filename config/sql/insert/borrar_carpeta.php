@@ -5,29 +5,28 @@
 
 	$delete = "DELETE FROM carpeta_imagenes WHERE id = ?";
 
-		// echo $delete;
+	// echo $delete;
 	$st = $mysqli->prepare($delete);
 	$st->bind_param("i", $id_carpeta);
 
 	if ($st->execute()) {
-		if (is_dir("$id_carpeta")) {
-		    rmdir("$id_carpeta");
-		    // $data = array('respuesta' => 1);
-		    // $filas[] = $data;
-		    // echo '{"data":'.json_encode($filas).'}';
-		    echo "1";
+		if (is_dir("../../imagenes/" . $id_carpeta)) {
+		    rmDir_rf("../../imagenes/" . $id_carpeta);
+		    echo 1;
 		} else {
-			// $data = array('respuesta' => 1);
-		 	// $filas[] = $data;
-		 	// echo '{"data":'.json_encode($filas).'}';
-			echo "1";
+			echo 1;
 		}
 	} else {
-		// $data = array('respuesta' => "Falló al eliminar carpeta");
-	 	// $filas[] = $data;
-	 	// echo '{"data":'.json_encode($filas).'}';
 	 	echo "Falló al eliminar carpeta";
 	}
+
+	function rmDir_rf($carpeta) {
+      	foreach(glob($carpeta . "/*") as $archivos_carpeta){             
+        	unlink($archivos_carpeta);
+      	}
+      	
+      	rmdir($carpeta);
+    }
 
 	$st->close();
 	$mysqli->close();

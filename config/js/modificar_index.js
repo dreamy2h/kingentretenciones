@@ -22,20 +22,33 @@ function validar_form() {
 function crear_carpeta() {
 	var nombre_carpeta = $("#txt_nombre_carpeta").val();
 	var tipo_carpeta = $("#cmb_tipo_carpeta").val();
+    var id = $("#oculto_id_carpeta").val();
+
+    if (typeof id !== 'undefined' && id != "") {
+        var link = "sql/insert/carpetas_upd.php";
+    } else {
+        var link = "sql/insert/carpetas_add.php";
+    }
 
 	$.ajax({
- 		url: "sql/insert/carpetas_add.php",
+ 		url: link,
  		data: {
- 			nombre_carpeta:nombre_carpeta,
- 			tipo_carpeta:tipo_carpeta 
+            id: id,
+ 			nombre_carpeta: nombre_carpeta,
+ 			tipo_carpeta: tipo_carpeta 
  		},
  		type: "POST",
  		success: function(data) {
  			if (data==1) {
             	filtrar_tipo_carpeta(tipo_carpeta);
-            	$("#alerta_mensaje").text("Carpeta ingresada de forma correcta.");
+                if (typeof id !== 'undefined' && id != "") {
+                    $("#alerta_mensaje").text("Carpeta actualizada de forma correcta.");
+                } else {
+                    $("#alerta_mensaje").text("Carpeta ingresada de forma correcta.");
+                }
             	$(".alert-success").removeClass("hidden");
             	$("#txt_nombre_carpeta").val("");
+                $("#oculto_id_carpeta").val("");
             	window.setTimeout(ocultar_alert,3000,"alert-success");
             } else {
             	$("#alerta_error").text(data);
@@ -60,7 +73,7 @@ function activar_carpeta(id, tipo_carpeta) {
         },
         type: "POST",
         success: function(data) {
-            if (data.respuesta == "1") {
+            if (data == 1) {
                 filtrar_tipo_carpeta(tipo_carpeta);
                 $("#alerta_mensaje").text("Activada con éxito.");
                 $(".alert-success").removeClass("hidden");
@@ -78,7 +91,7 @@ function filtrar_tipo_carpeta(tipo_carpeta) {
     $("#grid_carpeta").dataTable().fnReloadAjax("sql/consultas/datagrid_carpetas.php?tipo_carpeta=" + tipo_carpeta);
 }
 
-function borrar_carpeta(id_carpeta) {
+function borrar_carpeta(id_carpeta, tipo_carpeta) {
     if (confirm("Borrar carpeta " + id_carpeta)) {
         $.ajax({
             url: "sql/insert/borrar_carpeta.php",
@@ -102,9 +115,15 @@ function borrar_carpeta(id_carpeta) {
     }
 }
 
+function cancelar() {
+    $("#txt_nombre_carpeta").val("");
+    $("#oculto_id_carpeta").val("");
+}
+
 $(document).ready(function() {
     var tipo_car =  $("#cmb_tipo_carpeta").val();
 	$("#btn_crear_carpeta").click(validar_form);
+    $("#btn_cancelar").click(cancelar);
     $("#cmb_tipo_carpeta").on("change", function(tipo_carpeta){
         filtrar_tipo_carpeta($(this).val());
     })
@@ -192,11 +211,21 @@ $(document).ready(function() {
         $('#dlg_adjuntar_img').modal('show');
     });
 
+    $("#grid_carpeta tbody").on("click", "button.editar", function () {
+        var data = grid_carpeta.row( $(this).parents("tr") ).data();
+        var id = data['id'];
+        var nombre_carpeta = data['carpeta'];
+
+        $("#oculto_id_carpeta").val(id);
+        $("#txt_nombre_carpeta").val(nombre_carpeta);
+    });
+
     $("#grid_carpeta tbody").on("click", "button.eliminar", function () {
         var data = grid_carpeta.row( $(this).parents("tr") ).data();
         var id = data['id'];
+        var tipo_carpeta = data['id_tipo'];
 
-        borrar_carpeta(id);
+        borrar_carpeta(id, tipo_carpeta);
     });
 
     $("#grid_carpeta tbody").on("click", "button.descripcion", function () {

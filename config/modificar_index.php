@@ -9,6 +9,7 @@
 	<title></title>
 </head>
 <body>
+	<input type="hidden" name="oculto_id_carpeta" id="oculto_id_carpeta">
 	<div class="col-sm-12">
 		<center><h2>Administrar carpetas de imágenes</h2></center>
 	</div>
@@ -32,7 +33,7 @@
 						</div>
 
 						<div class="col-lg-2 col-md-2 col-sm-12">
-							<input type="button" class="btn btn-primary form-control" value="Crear Carpeta" id="btn_crear_carpeta" name="btn_crear_carpeta">
+							<input type="button" class="btn btn-primary form-control" value="Guardar" id="btn_crear_carpeta" name="btn_crear_carpeta">
 						</div>
 
 						<div class="col-lg-2 col-md-2 col-sm-12">
