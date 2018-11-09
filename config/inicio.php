@@ -33,8 +33,6 @@
 	    	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       			<ul class="nav navbar-nav">
         			<li class="active"><a href="#" id="btn_index" onclick="setLink('modificar_index.php')">Adm. Imágenes</a></li>
-        			<li><a href="#" id="btn_quienes_somos" onclick="setLink('modificar_quienes_somos.php')">Quienes somos</a></li>
-        			<li><a href="#" id="btn_productos" onclick="setLink('modificar_productos.php')">Productos</a></li>
       			</ul>
       		
       			<ul class="nav navbar-nav navbar-right">
@@ -42,9 +40,8 @@
           				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $usuario; ?><span class="caret"></span></a>
           				<ul class="dropdown-menu">
             				<li><a href="#">Clave</a></li>
-            				<li><a href="#">Nombre de usuario</a></li>
             				<li role="separator" class="divider"></li>
-            				<li><a href="#">Cerrar sesión</a></li>
+            				<li><a href="logout.php">Cerrar sesión</a></li>
           				</ul>
         			</li>
       			</ul>
