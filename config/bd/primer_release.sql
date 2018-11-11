@@ -18,5 +18,7 @@ create table carpeta_imagenes_det (
 	nombre_imagen varchar(100) NOT NULL,
     nombre_producto varchar(100),
     descripcion_producto varchar(2000),
+    celular varchar(20),
+    correo varchar(100),
 	PRIMARY KEY (id) 
 )

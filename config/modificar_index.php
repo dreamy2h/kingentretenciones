@@ -29,6 +29,7 @@
 							    <option value="3">Productos</option>
 							    <option value="4">Portada</option>
 							    <option value="5">Quienes Somos</option>
+							    <option value="6">Datos Contacto</option>
 							</select>
 						</div>
 

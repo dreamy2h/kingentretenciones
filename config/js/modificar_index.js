@@ -135,7 +135,21 @@ $(document).ready(function() {
             { "data": "id" },
             { "data": "carpeta" },
             { "data": "tipo" },
-            { "defaultContent": "<button type='button' class='adjuntar btn btn-default' title='Adjuntar Imágenes'><i class='material-icons' style='font-size:25px;color:green'>attach_file</i></button>" },
+            { 
+                "data": "id_tipo",
+                "render": function(data, type, row)
+                {
+                    const CONTACTO = 6;
+                    var boton_disabled;
+                    if (data == CONTACTO) {
+                        boton_disabled = "...";
+                    } else {
+                        boton_disabled = "<button type='button' class='adjuntar btn btn-default' title='Adjuntar Imágenes'><i class='material-icons' style='font-size:25px;color:green'>attach_file</i></button>";
+                    }
+
+                    return boton_disabled;
+                }
+            },
             { "defaultContent": "<button type='button' class='editar btn btn-default' title='Editar Datos Carpeta'><i class='material-icons' style='font-size:25px;color:blue'>update</i></button>" },
             { "defaultContent": "<button type='button' class='eliminar btn btn-default' title='Eliminar Carpeta'><i class='material-icons' style='font-size:25px;color:red'>delete</i></button>"},
             { 
@@ -144,8 +158,9 @@ $(document).ready(function() {
                 {
                     const PRODUCTOS = 3;
                     const QUIENES_SOMOS = 5;
+                    const CONTACTO = 6;
                     var boton_disabled;
-                    if (data == PRODUCTOS || data == QUIENES_SOMOS) {
+                    if (data == PRODUCTOS || data == QUIENES_SOMOS || data == CONTACTO) {
                         boton_disabled = "<button type='button' class='descripcion btn btn-default' title='Agregar Descripción a los Productos'><i class='material-icons' style='font-size:25px;'>settings</i></button>";
                     } else {
                         boton_disabled = "...";
@@ -234,21 +249,33 @@ $(document).ready(function() {
         var carpeta = data['carpeta'];
         var tipo = data['id_tipo'];
         const QUIENES_SOMOS = 5;
+        const CONTACTO = 6;
 
-        if (tipo == QUIENES_SOMOS) {
-            $("#txt_nombre_dialogo").text("Descripción Quienes Somos");
+        if (tipo == CONTACTO) {
+            $("#divContenedorProductos").load(
+                "contacto_detalle.php",
+                {
+                    "id_carpeta": id,
+                    "nombre_carpeta": carpeta,
+                    "tipo_carpeta": tipo
+                }
+            );            
         } else {
-            $("#txt_nombre_dialogo").text("Descripción Productos");
-        }
-
-        $("#divContenedorProductos").load(
-            "productos_detalle.php",
-            {
-                "id_carpeta": id,
-                "nombre_carpeta": carpeta,
-                "tipo_carpeta": tipo
+            if (tipo == QUIENES_SOMOS) {
+                $("#txt_nombre_dialogo").text("Descripción Quienes Somos");
+            } else {
+                $("#txt_nombre_dialogo").text("Descripción Productos");
             }
-        );
+
+            $("#divContenedorProductos").load(
+                "productos_detalle.php",
+                {
+                    "id_carpeta": id,
+                    "nombre_carpeta": carpeta,
+                    "tipo_carpeta": tipo
+                }
+            );
+        }
         $('#dlg_descripcion_productos').modal('show');
     });
 

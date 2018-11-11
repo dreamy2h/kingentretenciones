@@ -1,6 +1,7 @@
 <?php 
 	session_start();
     $usuario = $_SESSION['usuario'];
+    if (isset($_SESSION['usuario'])) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -74,3 +75,8 @@
 	<script src="js/inicio.js" type="text/javascript"></script>
 </body>
 </html>
+<?php 
+    } else {
+        header('Location: index.php');
+    }
+?>

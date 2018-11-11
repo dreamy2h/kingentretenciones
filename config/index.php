@@ -1,3 +1,9 @@
+<?php 
+	session_start();
+	if (isset($_SESSION["usuario"])) {
+		header('Location: inicio.php');
+	} else {
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,3 +34,6 @@
 	<script src="js/index.js" type="text/javascript"></script>
 </body>
 </html>
+<?php 
+	}
+?>
