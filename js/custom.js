@@ -8,17 +8,22 @@ function enviar_correo(nombre, apellido, email, mensaje){
 
     console.log(parametros);
 
-    /*$.ajax({
+    $.ajax({
             data:  parametros, //datos que se envian a traves de ajax
-            url:   'ejemplo_ajax_proceso.php', //archivo que recibe la peticion
+            url:   'enviar_form.php', //archivo que recibe la peticion
             type:  'post', //método de envio
-            beforeSend: function () {
-                    $("#resultado").html("Procesando, espere por favor...");
-            },
+            /*beforeSend: function () {
+                $("#resultado").html("Procesando, espere por favor...");
+            },*/
             success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
-                    $("#resultado").html(response);
+                // alert("Su mensaje a sido enviado.");
+                $("#txt_primer_nombre").val("");
+                $("#txt_primer_apellido").val("");
+                $("#txt_email").val("");
+                $("#txt_mensaje").val("");
+                alert(response);
             }
-    });*/
+    });
 }
 $(document).ready(function () {
     $(window).scroll(function () {

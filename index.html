@@ -1,11 +1,5 @@
-<!--Template Name: Snappy
-File Name: index.html
-Author Name: ThemeVault
-Author URI: http://www.themevault.net/
-License URI: http://www.themevault.net/license/-->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -73,7 +67,7 @@ License URI: http://www.themevault.net/license/-->
                     </ul>
                 </div>
             </header>
-            <div class="banner-full-image">
+            <div id="imagen_portada">
                 <div class="banner-title">
                     <img src="images/logo.png" width="100px"><h1>KING Entretenciones</h1>
                     <a class="btn btn-primary" href="about.html">Leer más</a>
@@ -84,26 +78,10 @@ License URI: http://www.themevault.net/license/-->
             <div class="container">
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="text-head">
-                        <h2>Últimos eventos realizados</h2>
+                        <h2>Últimos eventos</h2>
                     </div>
                     <section id="miSlide" class="carousel slide">
-                        <ol class="carousel-indicators">
-                            <li data-target="#miSlide" data-slide-to="0" class="active"></li>
-                            <li data-target="#miSlide" data-slide-to="1"></li>
-                            <li data-target="#miSlide" data-slide-to="2"></li>
-                        </ol>
-
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <img src="images/gallery-image1-original.jpg" class="adaptar">
-                            </div>
-                            <div class="item">
-                                <img src="images/gallery-image4-original.jpg" class="adaptar">
-                            </div>
-                            <div class="item">
-                                <img src="images/gallery-image3-original.jpg" class="adaptar">
-                            </div>
-                        </div>
+                        <div id="eventos"></div>
                     </section>
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12">
@@ -111,23 +89,7 @@ License URI: http://www.themevault.net/license/-->
                         <h2>Promociones</h2>
                     </div>
                     <section id="miSlide2" class="carousel slide">
-                        <ol class="carousel-indicators">
-                            <li data-target="#miSlide2" data-slide-to="0" class="active"></li>
-                            <li data-target="#miSlide2" data-slide-to="1"></li>
-                            <li data-target="#miSlide2" data-slide-to="2"></li>
-                        </ol>
-
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <img src="images/gallery-image5-original.jpg" class="adaptar">
-                            </div>
-                            <div class="item">
-                                <img src="images/gallery-image6-original.jpg" class="adaptar">
-                            </div>
-                            <div class="item">
-                                <img src="images/gallery-image7-original.jpg" class="adaptar">
-                            </div>
-                        </div>
+                        <div id="promociones"></div>
                     </section>
                 </div>
             </div>
@@ -146,43 +108,8 @@ License URI: http://www.themevault.net/license/-->
                 <i class="fa fa-angle-double-up" aria-hidden="true"></i> Top
             </div>
         </div>
-        <script>
-            jQuery(window).load(function () {
-                $('#preloader-container').delay(650).fadeOut('slow')
-                        ;
-            });
-        </script>
-
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script>
-            jQuery(document).ready(function ($) {
-                $('.image-popup').magnificPopup({
-                    type: 'image',
-                    removalDelay: 300,
-                    mainClass: 'mfp-with-zoom',
-                    titleSrc: 'title',
-                    gallery: {
-                        enabled: true
-                    },
-                    zoom: {
-                        enabled: true, // By default it's false, so don't forget to enable it
-
-                        duration: 300, // duration of the effect, in milliseconds
-                        easing: 'ease-in-out', // CSS transition easing function
-
-                        // The "opener" function should return the element from which popup will be zoomed in
-                        // and to which popup will be scaled down
-                        // By defailt it looks for an image tag:
-                        opener: function (openerElement) {
-                            // openerElement is the element on which popup was initialized, in this case its <a> tag
-                            // you don't need to add "opener" option if this code matches your needs, it's defailt one.
-                            // return openerElement.is('img') ? openerElement : openerElement.find('img');
-                            return openerElement.is('img') ? openerElement : openerElement.find('img');
-                        }
-                    }
-                });
-            });
-        </script>
         
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
